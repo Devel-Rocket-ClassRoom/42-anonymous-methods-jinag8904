@@ -5,57 +5,62 @@ Main();
 
 static void Main()
 {
-    int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-    Func<int, bool> isEven = i => i % 2 == 0;
+    int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };  // 원본 배열
+    DataProcessor processor = new DataProcessor(numbers);
 
     Console.Write($"=== 원본 배열 출력 ===\n");
-    foreach (int i in array)
-    {
-        Console.Write($"{i} ");
-    }
+    processor.ForEach(delegate (int i) { Console.Write($"{i} "); });
     Console.WriteLine();
 
-    Console.Write($"\n=== 2배로 변환 ===");
-    array = DataProcessor.Transform(delegate (int i) { return i * 2; });
-    foreach (int i in array)
-    {
-        Console.Write($"{i} ");
-    }
+    Console.Write($"\n=== 2배로 변환 ===\n");
+    int[] doubled = processor.Transform(delegate (int i) { return i * 2; });
+    foreach (int i in doubled) Console.Write($"{i} ");
     Console.WriteLine();
 
-    Console.Write($"\n=== 짝수만 필터링 ===");
+    Console.Write($"\n=== 짝수만 필터링 ===\n");
+    List<int> filtered = processor.Filter(delegate (int i) { return i % 2 == 0; });
+    foreach (int i in filtered) Console.Write($"{i} ");
+    Console.WriteLine();
 
-
+    Console.WriteLine($"\n=== 합계 계산 ===");
+    int sum = processor.Reduce(delegate (int a, int b) { return a + b; }, 0);
+    Console.WriteLine($"합계: {sum}");
 }
 
 class DataProcessor
 {
-    public static void ForEach(Action<int> action)  // 배열의 각 요소에 대해 action 실행
+    private int[] _ints;
+
+    public DataProcessor(int[] numbers)
     {
-        foreach (int i in ints)
+        _ints = numbers;
+    }
+
+    public void ForEach(Action<int> action)  // 배열의 각 요소에 대해 action 실행
+    {
+        foreach (int i in _ints)
         {
             action(i);
         }
     }
 
-    public static int[] Transform(Func<int, int> transformer)   // 배열의 각 요소를 변환해 새 배열 반환
+    public int[] Transform(Func<int, int> transformer)   // 배열의 각 요소를 변환해 새 배열 반환
     {
-        int[] newInts = new int[ints.Length];
+        int[] newInts = new int[_ints.Length];
 
-        foreach (int i in ints)
+        for (int i = 0; i < _ints.Length; i++)
         {
-            newInts[i] = transformer(i);
+            newInts[i] = transformer(_ints[i]);
         }
 
         return newInts;
     }
 
-    public static List<int> Filter(Func<int, bool> predicate)
+    public List<int> Filter(Func<int, bool> predicate)
     {
         List<int> newInts = new List<int>();
 
-        foreach (int i in ints)
+        foreach (int i in _ints)
         {
             if (predicate(i)) newInts.Add(i);
         }
@@ -63,15 +68,15 @@ class DataProcessor
         return newInts;
     }
 
-    public static int Reduce(Func<int, int, int> reducer, int initialValue)
+    public int Reduce(Func<int, int, int> reducer, int initialValue)
     {
-        int sum = 0;
+        int result = initialValue;
 
-        foreach (int i in ints)
+        foreach (int i in _ints)
         {
-            sum += i;
+            result = reducer(result, i);
         }
 
-        return sum;
+        return result;
     }
 }
