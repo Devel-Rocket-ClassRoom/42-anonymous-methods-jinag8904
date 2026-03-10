@@ -9,7 +9,8 @@
 
 ## 1. 명명된 메서드를 대리자에 할당
 
-`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 제곱을 계산하는 `Square` 정적 메서드를 만들고, 대리자에 할당하여 `calc(5)`를 출력하세요.
+`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 
+제곱을 계산하는 `Square` 정적 메서드를 만들고, 대리자에 할당하여 `calc(5)`를 출력하세요.
 
 **실행 결과**
 
@@ -21,7 +22,10 @@
 
 ## 2. 반환 타입이 있는 익명 메서드
 
-`Transformer` 대리자(int를 받아 int를 반환)를 선언하세요. `delegate (int x) { return x * x; }`로 제곱, `delegate (int x) { return x * x * x; }`로 세제곱 익명 메서드를 만드세요. `"3의 제곱: {square(3)}"`과 `"3의 세제곱: {cube(3)}"`을 출력하세요.
+`Transformer` 대리자(int를 받아 int를 반환)를 선언하세요. 
+`delegate (int x) { return x * x; }`로 제곱, `delegate (int x) { return x * x * x; }`로 
+세제곱 익명 메서드를 만드세요. `"3의 제곱: {square(3)}"`과 `"3의 세제곱: {cube(3)}"`을 
+출력하세요.
 
 **실행 결과**
 
@@ -34,7 +38,10 @@
 
 ## 3. 반환 타입이 없는 익명 메서드
 
-`Printer` 대리자(string을 받고 반환값 없음)를 선언하세요. `delegate (string message) { Console.WriteLine($"[메시지] {message}"); }`로 익명 메서드를 만들고, `"안녕하세요!"`와 `"익명 메서드를 사용 중입니다."`를 전달하여 호출하세요.
+`Printer` 대리자(string을 받고 반환값 없음)를 선언하세요. 
+`delegate (string message) { Console.WriteLine($"[메시지] {message}"); }`로 
+익명 메서드를 만들고, `"안녕하세요!"`와 `"익명 메서드를 사용 중입니다."`를 전달하여 
+호출하세요.
 
 **실행 결과**
 
@@ -47,7 +54,9 @@
 
 ## 4. Func와 Action 델리게이트 사용
 
-`Func<int, int>`에 `delegate (int x) { return x * 2; }`를 할당하고, `Action<string>`에 `delegate (string msg) { Console.WriteLine($"[LOG] {msg}"); }`를 할당하세요. `doubler(10)`을 출력하고, `logger("작업 시작")`을 호출하세요.
+`Func<int, int>`에 `delegate (int x) { return x * 2; }`를 할당하고, 
+`Action<string>`에 `delegate (string msg) { Console.WriteLine($"[LOG] {msg}"); }`를 
+할당하세요. `doubler(10)`을 출력하고, `logger("작업 시작")`을 호출하세요.
 
 **실행 결과**
 
@@ -60,7 +69,9 @@
 
 ## 5. 매개변수 생략
 
-`SimpleDelegate` 대리자(int와 string을 받고 반환값 없음)를 선언하세요. 매개변수를 사용하지 않는 익명 메서드(`delegate { ... }`)를 할당하고, `handler(100, "테스트")`로 호출하여 `"매개변수를 사용하지 않습니다."`를 출력하세요.
+`SimpleDelegate` 대리자(int와 string을 받고 반환값 없음)를 선언하세요. 
+매개변수를 사용하지 않는 익명 메서드(`delegate { ... }`)를 할당하고, 
+`handler(100, "테스트")`로 호출하여 `"매개변수를 사용하지 않습니다."`를 출력하세요.
 
 **실행 결과**
 
@@ -72,7 +83,9 @@
 
 ## 6. 이벤트 핸들러에서의 매개변수 생략
 
-`EventHandler` 대리자(object와 EventArgs를 받고 반환값 없음)를 선언하세요. 매개변수를 생략한 익명 메서드를 할당하고, `onClick(null, EventArgs.Empty)`로 호출하여 `"클릭 이벤트 발생!"`을 출력하세요.
+`EventHandler` 대리자(object와 EventArgs를 받고 반환값 없음)를 선언하세요. 
+매개변수를 생략한 익명 메서드를 할당하고, `onClick(null, EventArgs.Empty)`로 호출하여 
+`"클릭 이벤트 발생!"`을 출력하세요.
 
 **실행 결과**
 

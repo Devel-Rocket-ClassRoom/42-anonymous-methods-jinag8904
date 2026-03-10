@@ -6,12 +6,16 @@
 
 1. `CounterFactory` 클래스를 생성하고 다음 정적 메서드들을 구현함:
    - `CreateSimpleCounter()`: 1씩 증가하는 카운터를 반환함 (`Func<int>`)
-   - `CreateStepCounter(int step)`: 지정된 step만큼 증가하는 카운터를 반환함 (`Func<int>`)
-   - `CreateBoundedCounter(int min, int max)`: min부터 max까지 순환하는 카운터를 반환함 (`Func<int>`)
-   - `CreateResettableCounter()`: 증가 및 리셋 기능이 있는 카운터를 반환함 (`Action`과 `Func<int>`를 out 매개변수로 반환)
+   - `CreateStepCounter(int step)`: 지정된 step만큼 증가하는 카운터를 반환함
+	(`Func<int>`)
+	- `CreateBoundedCounter(int min, int max)`: min부터 max까지 순환하는 카운터를 반환함 
+		- (`Func<int>`)
+   
+	- - `CreateResettableCounter()`: 증가 및 리셋 기능이 있는 카운터를 반환함
+		- (`Action`과 `Func<int>`를 out 매개변수로 반환)
 
 2. 각 메서드는 익명 메서드를 사용하여 클로저를 형성해야 함
-
+ 
 3. `Main` 메서드에서 각 카운터를 테스트함:
    - 단순 카운터: 5번 호출
    - 스텝 카운터 (step=3): 4번 호출

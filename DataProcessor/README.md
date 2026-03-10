@@ -10,7 +10,8 @@
    - `ForEach(Action<int> action)`: 배열의 각 요소에 대해 action을 실행함
    - `Transform(Func<int, int> transformer)`: 배열의 각 요소를 변환하여 새 배열을 반환함
    - `Filter(Func<int, bool> predicate)`: 조건을 만족하는 요소만 포함하는 리스트를 반환함
-   - `Reduce(Func<int, int, int> reducer, int initialValue)`: 배열의 모든 요소를 하나의 값으로 줄임
+   - `Reduce(Func<int, int, int> reducer, int initialValue)`: 배열의 모든 요소를 
+	- 하나의 값으로 줄임
 
 3. `Main` 메서드에서 익명 메서드를 사용하여 다음 작업을 수행함:
    - 배열 `{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }` 생성

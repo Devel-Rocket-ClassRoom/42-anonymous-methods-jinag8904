@@ -9,7 +9,9 @@
 
 ## 1. 표현식 구문: 람다식만 가능
 
-`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 익명 메서드로 제곱을 계산하는 `anonymous`와 람다식 표현식으로 동일한 `lambda`를 만드세요. `"익명 메서드: {anonymous(4)}"`와 `"람다식: {lambda(4)}"`를 출력하세요.
+`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 
+익명 메서드로 제곱을 계산하는 `anonymous`와 람다식 표현식으로 동일한 `lambda`를 만드세요. 
+`"익명 메서드: {anonymous(4)}"`와 `"람다식: {lambda(4)}"`를 출력하세요.
 
 **실행 결과**
 
@@ -22,7 +24,11 @@
 
 ## 2. 조건부 필터링
 
-`int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }` 배열을 선언하세요. `Filter(int[] source, Func<int, bool> predicate)` 정적 메서드를 구현하세요. 이 메서드는 조건을 만족하는 요소들을 `List<int>`로 반환합니다. 짝수 필터링과 5보다 큰 수 필터링을 각각 익명 메서드로 수행하고, `"짝수: "`, `"5보다 큰 수: "` 뒤에 `string.Join(", ", ...)`으로 출력하세요.
+`int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }` 배열을 선언하세요. 
+`Filter(int[] source, Func<int, bool> predicate)` 정적 메서드를 구현하세요. 
+이 메서드는 조건을 만족하는 요소들을 `List<int>`로 반환합니다. 
+짝수 필터링과 5보다 큰 수 필터링을 각각 익명 메서드로 수행하고, 
+`"짝수: "`, `"5보다 큰 수: "` 뒤에 `string.Join(", ", ...)`으로 출력하세요.
 
 **실행 결과**
 
@@ -35,7 +41,11 @@
 
 ## 3. 정적 익명 메서드 (C# 9.0)
 
-`int factor = 10`을 선언하세요. `Func<int, int> normalMethod`에 일반 익명 메서드(`delegate (int n) { return n * factor; }`)를 할당하세요. `Func<int, int> staticMethod`에 정적 익명 메서드(`static delegate (int n) { return n * 2; }`)를 할당하세요. `normalMethod(5)`와 `staticMethod(5)`를 출력하세요.
+`int factor = 10`을 선언하세요. `Func<int, int> normalMethod`에 
+일반 익명 메서드(`delegate (int n) { return n * factor; }`)를 할당하세요. 
+`Func<int, int> staticMethod`에 
+정적 익명 메서드(`static delegate (int n) { return n * 2; }`)를 할당하세요. 
+`normalMethod(5)`와 `staticMethod(5)`를 출력하세요.
 
 **실행 결과**
 

@@ -9,7 +9,11 @@
 
 ## 1. 익명 메서드와 람다식 비교
 
-`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 동일한 제곱 기능을 익명 메서드, 람다식(문장 블록), 람다식(표현식) 세 가지 방식으로 구현하세요. 각각 `anonymous(5)`, `lambda1(5)`, `lambda2(5)`를 `"익명 메서드: {값}"`, `"람다식 (블록): {값}"`, `"람다식 (표현식): {값}"` 형식으로 출력하세요.
+`Calculator` 대리자(int를 받아 int를 반환)를 선언하세요. 
+동일한 제곱 기능을 익명 메서드, 람다식(문장 블록), 람다식(표현식) 
+세 가지 방식으로 구현하세요. 각각 `anonymous(5)`, `lambda1(5)`, `lambda2(5)`를 
+`"익명 메서드: {값}"`, `"람다식 (블록): {값}"`, `"람다식 (표현식): {값}"` 형식으로 
+출력하세요.
 
 **실행 결과**
 
@@ -23,7 +27,9 @@
 
 ## 2. 매개변수 생략: 익명 메서드만 가능
 
-`EventHandler` 대리자(object와 EventArgs를 받고 반환값 없음)를 선언하세요. 익명 메서드에서 매개변수를 생략하여 `"이벤트 처리됨"`을 출력하는 `handler1`을 만드세요. 람다식으로 매개변수를 명시하여 동일한 기능의 `handler2`를 만드세요. 각각 호출하세요.
+`EventHandler` 대리자(object와 EventArgs를 받고 반환값 없음)를 선언하세요. 
+익명 메서드에서 매개변수를 생략하여 `"이벤트 처리됨"`을 출력하는 `handler1`을 만드세요. 
+람다식으로 매개변수를 명시하여 동일한 기능의 `handler2`를 만드세요. 각각 호출하세요.
 
 **실행 결과**
 
@@ -36,7 +42,11 @@
 
 ## 3. 빈 이벤트 핸들러 초기화
 
-`GameEvent` 대리자(string과 int를 받고 반환값 없음)를 선언하세요. `onScoreChange`와 `onGameOver`를 `delegate { }`로 빈 핸들러로 초기화하세요. `onScoreChange("점수 변경", 100)`과 `onGameOver("게임 종료", 0)`을 호출하세요. 그 후 `onScoreChange`에 `"[이벤트] {eventName}: {value}"` 형식으로 출력하는 익명 메서드를 `+=`로 추가하고, `onScoreChange("점수 변경", 500)`을 호출하세요.
+`GameEvent` 대리자(string과 int를 받고 반환값 없음)를 선언하세요. 
+`onScoreChange`와 `onGameOver`를 `delegate { }`로 빈 핸들러로 초기화하세요. 
+`onScoreChange("점수 변경", 100)`과 `onGameOver("게임 종료", 0)`을 호출하세요. 
+그 후 `onScoreChange`에 `"[이벤트] {eventName}: {value}"` 형식으로 출력하는 익명 메서드를 
+`+=`로 추가하고, `onScoreChange("점수 변경", 500)`을 호출하세요.
 
 **실행 결과**
 
@@ -48,7 +58,11 @@
 
 ## 4. 콜백 함수로 사용
 
-`int[] numbers = { 1, 2, 3, 4, 5 }` 배열과 `int sum = 0`을 선언하세요. `ProcessData(int[] data, Action<int> callback)` 정적 메서드를 구현하세요. 이 메서드는 배열의 각 요소에 대해 callback을 호출합니다. `ProcessData`에 `sum += n`과 `"처리 중: {n}, 누적: {sum}"`을 출력하는 익명 메서드를 전달하세요. 완료 후 `"최종 합계: {sum}"`을 출력하세요.
+`int[] numbers = { 1, 2, 3, 4, 5 }` 배열과 `int sum = 0`을 선언하세요. 
+`ProcessData(int[] data, Action<int> callback)` 정적 메서드를 구현하세요. 
+이 메서드는 배열의 각 요소에 대해 callback을 호출합니다. `ProcessData`에 `sum += n`과 
+`"처리 중: {n}, 누적: {sum}"`을 출력하는 익명 메서드를 전달하세요. 
+완료 후 `"최종 합계: {sum}"`을 출력하세요.
 
 **실행 결과**
 
